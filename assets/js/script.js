@@ -8,9 +8,9 @@ const contactBook = [];
 
 function addNewEntry() {
     const newEntry = [{
-        name: nameValue,
-        email: emailValue,
-        telephone: telephoneValue
+        name: nameField.value,
+        email: emailField.value,
+        telephone: telephoneField.value
     }];
 
     
