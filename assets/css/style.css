@@ -1,4 +1,6 @@
-body {}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 header {
     background-color: blueviolet;
 }
@@ -16,7 +18,6 @@ header figure img {
 }
 header h1 {
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     margin-top: 10px;
     margin-left: 10px;
@@ -47,6 +48,7 @@ main section {
     height: 25px;
     border: none;
     border-radius: 3px;
+    box-shadow: 5px 3px 5px rgb(138, 87, 134);
 }
 
 .mainForm button {
@@ -56,10 +58,45 @@ main section {
     border-radius: 3px;
     text-transform: uppercase;
     cursor: pointer;
+    box-shadow: 5px 3px 5px rgb(138, 87, 134);
+    transition-duration: 0.3s;
+}
+
+.mainForm button:hover {
+    background-color: rgb(224, 224, 224);
 }
 
 .sectionContactList {
-    background-color: whitesmoke;
+    background-color: rgb(242, 216, 255);
 }
-.mainContactList {}
-
+.mainContactList {
+    width: 100%;
+    max-width: 450px;
+}
+.mainContactList li {
+    background-color: whitesmoke;
+    box-shadow: 10px 5px 5px rgb(184, 117, 180);
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.mainContactList li button {
+    float: right;
+    background-image: url(../img/del_logo.png) ;
+    width: 25px;
+    height: 25px;
+    background-size: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid red;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.mainContactList li h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.mainContactList li p {
+    margin: 5px 0;
+}
+.mainContactList li span {}
