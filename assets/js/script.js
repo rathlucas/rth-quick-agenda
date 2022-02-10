@@ -5,6 +5,7 @@ const submitButton = document.getElementById("submitBtn");
 
 const contactBook = [];
 
+
 function addNewEntry() {
     const newEntry = {
         name: nameField.value,
@@ -18,22 +19,40 @@ function addNewEntry() {
     
 }
 
-// TODO: Fix bug adding doubled contacts on the page
-function contactLoop() {
-    const ul = document.getElementById("TARGET");
-    for (let key of contactBook) {
-        let newLi = document.createElement("li");
-        
-        newLi.innerHTML = `
-            <button class="removeContact"></button>
-            <h2>${key.name}</h2>
-            <p>${key.email}</p>
-            <span>${key.telephone}</span>
-        `;
+const ul = document.getElementById("TARGET");
+const noContact = document.getElementById("noContact");
 
-        ul.appendChild(newLi);
+function createElement() {
+    let newDelBtn = document.createElement("button");
+    let newLi = document.createElement("li");
+    let newh2 = document.createElement("h2");
+    let newP = document.createElement("p");
+    let NewSpan = document.createElement("span");
+
+    newDelBtn.setAttribute("class", "removeContact");
+
+    for (i of contactBook) {
+        newh2.textContent = `${i.name}`
+        newP.textContent = `${i.email}`
+        NewSpan.textContent = `${i.telephone}`
     }
+
+    newLi.appendChild(newDelBtn);
+    newLi.appendChild(newh2);
+    newLi.appendChild(newP);
+    newLi.appendChild(NewSpan);
+    
+    ul.appendChild(newLi);
+    
+    if (ul.contains(noContact)) {
+        ul.removeChild(noContact);
+    }
+
+    console.log(newLi);
+
+    
 }
+    
 
 submitButton.addEventListener("click", addNewEntry);
-submitButton.addEventListener("click", contactLoop);
+submitButton.addEventListener("click", createElement);
