@@ -37,6 +37,11 @@ function createElement() {
         NewSpan.textContent = `${i.telephone}`
     }
 
+    newDelBtn.onclick = function() {
+        newDelBtn.parentElement.remove()
+        return;
+    }
+
     newLi.appendChild(newDelBtn);
     newLi.appendChild(newh2);
     newLi.appendChild(newP);
@@ -49,8 +54,6 @@ function createElement() {
     }
 
     console.log(newLi);
-
-    
 }
     
 
